@@ -359,8 +359,6 @@ body.dark #sun {
 }
 
 .gallery-container video {
-  width: 200px;
-  height: 200px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 10px var(--first-shadow);
@@ -529,7 +527,7 @@ audio {
 }
 
 /* Responsivitas - Mobile Kecil */
-@media (max-width: 480px) {
+@media (max-width: 410px) {
   .nav-logo .nav-name {
     font-size: 24px;
   }
@@ -554,7 +552,6 @@ audio {
   }
   
   .gallery-container video {
-    width: 100%;
     max-width: 250px;
   }
   

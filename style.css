@@ -469,6 +469,9 @@ audio {
     padding: 20px;
     box-shadow: 0 2px 10px var(--first-shadow);
     border-bottom: 2px solid var(--first-shadow);
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   
   .nav-menu-btn {

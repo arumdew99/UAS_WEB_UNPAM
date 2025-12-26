@@ -463,7 +463,7 @@ audio {
   .nav-menu.responsive {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 90px;
     left: 0;
     width: 100%;

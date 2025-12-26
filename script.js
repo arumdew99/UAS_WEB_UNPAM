@@ -3,8 +3,10 @@ function myMenuFunction() {
   const navMenu = document.getElementById("myNavMenu");
   if (navMenu.className === "nav-menu") {
     navMenu.className += " responsive";
+    ody.style.overflow = "hidden";
   } else {
     navMenu.className = "nav-menu";
+    body.style.overflow = "auto"
   }
 }
 
@@ -14,6 +16,7 @@ navLinks.forEach(link => {
   link.addEventListener("click", () => {
     const navMenu = document.getElementById("myNavMenu");
     navMenu.className = "nav-menu"; // Tutup menu setelah klik
+    document.body.style.overflow = "auto"
   });
 });
 

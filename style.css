@@ -32,6 +32,7 @@ body {
   background: var(--body-color);
   color: var(--text-color);
   transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 body.dark {
@@ -471,9 +472,9 @@ audio {
     box-shadow: 0 2px 10px var(--first-shadow);
     border-bottom: 2px solid var(--first-shadow);
     max-height: calc(100vh - 90px);
-    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
+    overflow-y: auto;
   }
   
   .nav-menu-btn {

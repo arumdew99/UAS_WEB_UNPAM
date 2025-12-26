@@ -63,6 +63,7 @@ nav {
   transition: 0.3s;
   z-index: 100;
   box-shadow: 0 2px 10px var(--first-shadow);
+  overscroll-behavior: contain;
 }
 
 .nav-logo .nav-name {
@@ -472,6 +473,7 @@ audio {
     max-height: calc(100vh - 90px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
   
   .nav-menu-btn {

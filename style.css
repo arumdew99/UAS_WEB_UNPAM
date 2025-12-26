@@ -65,6 +65,8 @@ nav {
   z-index: 100;
   box-shadow: 0 2px 10px var(--first-shadow);
   overscroll-behavior: contain;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .nav-logo .nav-name {
@@ -78,6 +80,7 @@ nav {
   display: flex;
   list-style: none;
   gap: 30px;
+  overflow-x: auto;
 }
 
 .nav-link {
@@ -474,7 +477,6 @@ audio {
     max-height: calc(100vh - 90px);
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
-    overflow-y: auto;
     overflow-x: auto;
   }
   

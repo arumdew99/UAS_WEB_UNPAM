@@ -142,6 +142,14 @@ window.addEventListener("scroll", () => {
     nav.style.boxShadow = "none";
   }
 });
+// Logika tambahan untuk tombol download CV
+const cvDownloadAction = document.querySelector(".download-cv-btn");
+
+if (cvDownloadAction) {
+  cvDownloadAction.addEventListener("click", () => {
+    console.log("Pengunduhan CV dimulai...");
+  });
+}
 
 // Efek hover pada ikon sosial di footer (sudah ada, tapi diperkuat untuk footer)
 const footerSocialIcons = document.querySelectorAll(".footer-social-icons .icon");

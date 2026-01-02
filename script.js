@@ -1,4 +1,4 @@
-// Fungsi untuk toggle menu hamburger (responsif)
+/* Fungsi untuk toggle menu hamburger (responsif)*/
 function myMenuFunction() {
   const navMenu = document.getElementById("myNavMenu");
   if (navMenu.className === "nav-menu") {
@@ -10,12 +10,12 @@ function myMenuFunction() {
   }
 }
 
-// Fungsi untuk menutup menu saat klik link (untuk UX yang lebih baik)
+/*Fungsi untuk menutup menu saat klik link (untuk UX yang lebih baik)*/
 const navLinks = document.querySelectorAll(".nav-link");
 navLinks.forEach(link => {
   link.addEventListener("click", () => {
     const navMenu = document.getElementById("myNavMenu");
-    navMenu.className = "nav-menu"; // Tutup menu setelah klik
+    navMenu.className = "nav-menu"; 
     document.body.style.overflow = "auto"
   });
 });
@@ -24,7 +24,7 @@ navLinks.forEach(link => {
 const toggleSwitch = document.getElementById("toggle-switch");
 toggleSwitch.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  // Simpan preferensi dark mode di localStorage
+
   if (document.body.classList.contains("dark")) {
     localStorage.setItem("theme", "dark");
   } else {
@@ -32,7 +32,7 @@ toggleSwitch.addEventListener("click", () => {
   }
 });
 
-// Load tema dari localStorage saat halaman dimuat
+/*Load tema dari localStorage saat halaman dimuat*/
 window.addEventListener("load", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
@@ -40,12 +40,12 @@ window.addEventListener("load", () => {
   }
 });
 
-// Animasi typing untuk nama di Home section
+/*Animasi typing untuk nama di Home section*/
 const typedTextSpan = document.querySelector(".typedText");
-const textArray = ["Arum Kusuma Dewi", "a Web Developer", "a Student at Pamulang University"]; // Array teks yang akan diketik
-const typingDelay = 200; // Delay antar karakter
-const erasingDelay = 100; // Delay saat menghapus
-const newTextDelay = 2000; // Delay sebelum teks baru
+const textArray = ["Arum Kusuma Dewi", "a Web Developer", "a Student at Pamulang University"]; 
+const typingDelay = 200; 
+const erasingDelay = 100; 
+const newTextDelay = 2000;
 let textArrayIndex = 0;
 let charIndex = 0;
 
@@ -71,30 +71,30 @@ function erase() {
   }
 }
 
-// Mulai animasi typing saat halaman load
+/*Mulai animasi typing saat halaman load*/
 document.addEventListener("DOMContentLoaded", function() {
   setTimeout(type, newTextDelay + 250);
 });
 
-// Animasi skill bar saat scroll ke About section
+/*Animasi skill bar saat scroll ke About section*/
 const skillBars = document.querySelectorAll(".skill-per");
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const targetWidth = entry.target.getAttribute("data-width");
       entry.target.style.width = targetWidth;
-      // Tambahkan atribut untuk menampilkan teks
+      /*Tambahkan atribut untuk menampilkan teks*/
       setTimeout(() => {
         entry.target.setAttribute("data-filled", "true");
-      }, 1000); // Delay 1 detik agar animasi selesai dulu
+      }, 1000); 
     }
   });
 }, { threshold: 0.5 });
 
 skillBars.forEach(bar => {
-  const width = bar.style.width; // Ambil width dari CSS
+  const width = bar.style.width; 
   bar.setAttribute("data-width", width);
-  bar.style.width = "0"; // Reset ke 0 untuk animasi
+  bar.style.width = "0"; 
   observer.observe(bar);
 });
 
@@ -106,14 +106,14 @@ navLinks.forEach(link => {
     const targetSection = document.getElementById(targetId);
     if (targetSection) {
       window.scrollTo({
-        top: targetSection.offsetTop - 90, // Offset untuk navbar fixed
+        top: targetSection.offsetTop - 90, 
         behavior: "smooth"
       });
     }
   });
 });
 
-// Efek hover pada ikon sosial di Home (menarik dengan animasi)
+/*Efek hover pada ikon sosial di Home (menarik dengan animasi)*/
 const socialIcons = document.querySelectorAll(".social_icons .icon");
 socialIcons.forEach(icon => {
   icon.addEventListener("mouseenter", () => {
@@ -121,28 +121,28 @@ socialIcons.forEach(icon => {
     icon.style.transition = "transform 0.3s ease";
   });
   icon.addEventListener("mouseleave", () => {
-    icon.style.transform = "scale(1) rotate(0deg)";  // Perbaikan: Menyelesaikan bagian yang terpotong
+    icon.style.transform = "scale(1) rotate(0deg)";  
   });
 });
 
-// Efek klik pada tombol Hire Me (alert sederhana, bisa diganti dengan modal)
+/*Efek klik pada tombol Hire Me (alert sederhana, bisa diganti dengan modal)*/
 const hireBtn = document.querySelector(".hire-btn");
 hireBtn.addEventListener("click", () => {
   alert("Terima kasih! Silakan hubungi saya di email atau WhatsApp.");
 });
 
-// Efek scroll untuk navbar (ubah background saat scroll)
+/*Efek scroll untuk navbar (ubah background saat scroll)*/
 window.addEventListener("scroll", () => {
   const nav = document.querySelector("nav");
   if (window.scrollY > 50) {
-    nav.style.background = "rgba(255, 255, 255, 0.9)"; // Semi-transparan
+    nav.style.background = "rgba(255, 255, 255, 0.9)"; 
     nav.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
   } else {
     nav.style.background = "var(--nav-color)";
     nav.style.boxShadow = "none";
   }
 });
-// Logika tambahan untuk tombol download CV
+/***tombol download CV***/
 const cvDownloadAction = document.querySelector(".download-cv-btn");
 
 if (cvDownloadAction) {
@@ -151,7 +151,7 @@ if (cvDownloadAction) {
   });
 }
 
-// Efek hover pada ikon sosial di footer (sudah ada, tapi diperkuat untuk footer)
+/**Efek hover pada ikon sosial di footer**/
 const footerSocialIcons = document.querySelectorAll(".footer-social-icons .icon");
 footerSocialIcons.forEach(icon => {
   icon.addEventListener("mouseenter", () => {
@@ -163,7 +163,7 @@ footerSocialIcons.forEach(icon => {
   });
 });
 
-// Smooth scroll untuk link footer (opsional, tapi menarik)
+/***Smooth scroll untuk link footer (opsional, tapi menarik)***/
 const footerLinks = document.querySelectorAll(".footer-menu-list a");
 footerLinks.forEach(link => {
   link.addEventListener("click", (e) => {
@@ -172,7 +172,7 @@ footerLinks.forEach(link => {
     const targetSection = document.getElementById(targetId);
     if (targetSection) {
       window.scrollTo({
-        top: targetSection.offsetTop - 90, // Offset untuk navbar fixed
+        top: targetSection.offsetTop - 90, 
         behavior: "smooth"
       });
     }

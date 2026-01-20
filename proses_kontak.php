@@ -15,23 +15,23 @@ if (!$conn) {
 
 // Proses jika formulir dikirim
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Mengambil data dari form (Atribut 'name' harus sesuai dengan HTML)
-    $nama   = mysqli_real_escape_string($conn, $_POST['nama_lengkap']);
-    $email  = mysqli_real_escape_string($conn, $_POST['email']);
-    $subjek = mysqli_real_escape_string($conn, $_POST['subjek']);
-    $pesan  = mysqli_real_escape_string($conn, $_POST['pesan']);
+    $conn = mysqli_connect("localhost", "root", "", "dbporto");
 
-    // Query SQL sesuai struktur tabel yang Anda buat
-    $sql = "INSERT INTO contact_messages (nama_lengkap, email, subjek, pesan) 
-            VALUES ('$nama', '$email', '$subjek', '$pesan')";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "<script>
-                alert('Pesan Anda berhasil terkirim!');
-                window.location.href='index.php';
-              </script>";
-    } else {
-        echo "Terjadi kesalahan: " . mysqli_error($conn);
+    if (!$conn) {
+        die("Koneksi gagal");
     }
+
+    $nama   = $_POST['nama_lengkap'];
+    $email  = $_POST['email'];
+    $subjek = $_POST['subjek'];
+    $pesan  = $_POST['pesan'];
+
+    mysqli_query($conn,
+        "INSERT INTO contact_messages 
+        (nama_lengkap, email, subjek, pesan)
+        VALUES ('$nama','$email','$subjek','$pesan')"
+    );
+
+    echo "<script>alert('Pesan terkirim');</script>";
 }
 ?>
